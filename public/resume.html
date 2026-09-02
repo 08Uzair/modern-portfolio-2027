@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Mohammad Uzer Qureshi — Resume</title>
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          document.documentElement.dataset.theme =
+            saved === "light" || saved === "dark" ? saved : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      :root,
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --paper: #212121;
+        --ink: #ececec;
+        --ink-muted: #b4b4b4;
+        --ink-faint: #8f8f8f;
+        --line: #424242;
+        --chip: #2f2f2f;
+        --accent: #6366f1;
+      }
+      [data-theme="light"] {
+        color-scheme: light;
+        --paper: #ffffff;
+        --ink: #0d0d0d;
+        --ink-muted: #5d5d5d;
+        --ink-faint: #8f8f8f;
+        --line: #e5e5e5;
+        --chip: #f4f4f4;
+        --accent: #4f46e5;
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      *:hover {
+        scrollbar-color: color-mix(in srgb, var(--ink) 26%, transparent)
+          transparent;
+      }
+      *::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+        margin-block: 8px;
+      }
+      *::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 999px;
+      }
+      *:hover::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--ink) 22%, transparent);
+      }
+      *::-webkit-scrollbar-thumb:active {
+        background: color-mix(in srgb, var(--ink) 40%, transparent);
+      }
+      *::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "JetBrains Mono", ui-monospace, "Cascadia Code", Menlo,
+          Consolas, monospace;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      ::selection,
+      *::selection {
+        background-color: #3f3f3f !important;
+        color: #ececec !important;
+      }
+      ::-moz-selection,
+      *::-moz-selection {
+        background-color: #3f3f3f !important;
+        color: #ececec !important;
+      }
+      [data-theme="light"] ::selection,
+      [data-theme="light"] *::selection {
+        background-color: #d8d8d6 !important;
+        color: #0d0d0d !important;
+      }
+      [data-theme="light"] ::-moz-selection,
+      [data-theme="light"] *::-moz-selection {
+        background-color: #d8d8d6 !important;
+        color: #0d0d0d !important;
+      }
+
+      .glow {
+        position: fixed;
+        z-index: -1;
+        border-radius: 999px;
+        filter: blur(90px);
+        pointer-events: none;
+      }
+      .glow-a {
+        top: -12vmax;
+        right: -8vmax;
+        width: 46vmax;
+        height: 46vmax;
+        background: radial-gradient(
+          circle,
+          color-mix(in srgb, var(--accent) 20%, transparent),
+          transparent 68%
+        );
+      }
+      .glow-b {
+        bottom: -14vmax;
+        left: -10vmax;
+        width: 48vmax;
+        height: 48vmax;
+        background: radial-gradient(
+          circle,
+          color-mix(in srgb, #22d3ee 13%, transparent),
+          transparent 68%
+        );
+      }
+
+      .fixed-ui {
+        position: fixed;
+        top: max(0.75rem, env(safe-area-inset-top));
+        right: max(0.75rem, env(safe-area-inset-right));
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 10;
+      }
+      .prompt {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        margin-right: auto;
+        height: 36px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--chip) 78%, transparent);
+        border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        font-size: 12px;
+        color: var(--ink-faint);
+      }
+      .prompt b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .prompt em {
+        color: var(--accent);
+        font-style: normal;
+      }
+      @media (min-width: 720px) {
+        .prompt {
+          position: fixed;
+          top: max(0.75rem, env(safe-area-inset-top));
+          left: max(1rem, env(safe-area-inset-left));
+          display: inline-flex;
+        }
+      }
+      .theme-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+        background: color-mix(in srgb, var(--chip) 78%, transparent);
+        color: var(--ink-muted);
+        cursor: pointer;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        transition: background-color 150ms, color 150ms;
+      }
+      .theme-btn:hover {
+        background: var(--chip);
+        color: var(--ink);
+      }
+
+      .sheet {
+        position: relative;
+        width: min(100% - 2rem, 900px);
+        margin: 5rem auto 3rem;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--paper) 82%, transparent);
+        backdrop-filter: blur(20px) saturate(120%);
+        -webkit-backdrop-filter: blur(20px) saturate(120%);
+        box-shadow: 0 24px 80px -40px color-mix(in srgb, #000 45%, transparent);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(22px, 4vw, 30px);
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
+      .cursor {
+        color: var(--accent);
+      }
+      .meta {
+        margin: 10px 0 0;
+        font-size: 12.5px;
+        color: var(--ink-muted);
+        line-height: 1.9;
+        overflow-wrap: anywhere;
+      }
+      .meta a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: color-mix(in srgb, var(--ink-faint) 60%, transparent);
+        text-underline-offset: 3px;
+        transition: color 150ms, text-decoration-color 150ms;
+      }
+      .meta a:hover {
+        color: var(--ink);
+        text-decoration-color: var(--ink);
+      }
+      .hide-md {
+        display: none;
+      }
+
+      h2 {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 34px 0 12px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      h2::before {
+        content: "$";
+        color: var(--accent);
+        letter-spacing: 0;
+      }
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        margin: 18px 0 2px;
+      }
+      .row .dates {
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 12px;
+        color: var(--ink-faint);
+      }
+      .role-chip {
+        display: inline-block;
+        margin-top: 4px;
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: var(--chip);
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--ink-muted);
+      }
+      .dates-line {
+        font-size: 12px;
+        color: var(--ink-faint);
+      }
+
+      p,
+      li {
+        font-size: 13px;
+      }
+      p {
+        margin: 8px 0;
+      }
+      ul {
+        margin: 6px 0 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      li {
+        position: relative;
+        padding-left: 22px;
+        margin: 5px 0;
+      }
+      li::before {
+        content: "▸";
+        position: absolute;
+        left: 4px;
+        color: var(--accent);
+        font-size: 11px;
+        top: 1px;
+      }
+
+      .project-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 20px 0 2px;
+      }
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 6px 0 0;
+      }
+      .project-links a,
+      .pill-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: var(--chip);
+        color: var(--ink-muted);
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 500;
+        transition: background-color 150ms, color 150ms;
+      }
+      .project-links a:hover,
+      .pill-link:hover {
+        background: color-mix(in srgb, var(--chip) 60%, var(--line) 40%);
+        color: var(--ink);
+      }
+      .project-links a em,
+      .pill-link em {
+        font-style: normal;
+        color: var(--accent);
+      }
+
+      .skill {
+        margin: 7px 0;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+      .skill b {
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .skill b::after {
+        content: ":";
+      }
+      .skill .group-label {
+        color: var(--ink-faint);
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+        color: var(--ink-faint);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .footer b {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      @media (max-width: 720px) {
+        .hide-md {
+          display: inline;
+        }
+        .sheet {
+          width: 100%;
+          margin: 4.25rem 0 0;
+          border-radius: 0;
+          border-left: none;
+          border-right: none;
+          border-bottom: none;
+        }
+        .row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2px;
+        }
+        .row .dates {
+          white-space: normal;
+        }
+      }
+      @media print {
+        .fixed-ui,
+        .glow {
+          display: none !important;
+        }
+        .sheet {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border: none;
+          border-radius: 0;
+          background: #fff;
+          color: #0d0d0d;
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
+          box-shadow: none;
+        }
+        body {
+          background: #fff;
+        }
+        h2::after {
+          background: #e5e5e5;
+        }
+        li::before {
+          color: #0d0d0d;
+        }
+        .pill-link,
+        .project-links a,
+        .role-chip {
+          background: #f4f4f4;
+          color: #0d0d0d;
+        }
+        .cursor {
+          color: #0d0d0d;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+
+    <div class="fixed-ui">
+      <button
+        id="theme-btn"
+        class="theme-btn"
+        type="button"
+        aria-label="Switch theme"
+        title="Switch theme"
+      >
+        <svg id="icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+          <circle cx="8" cy="8" r="2.6" stroke="currentColor" strokeWidth="1.3" />
+          <path
+            d="M8 2v1.4M8 12.6V14M2 8h1.4M12.6 8H14M3.76 3.76l.99.99M11.25 11.25l.99.99M3.76 12.24l.99-.99M11.25 4.75l.99-.99"
+            stroke="currentColor"
+            strokeWidth="1.3"
+            strokeLinecap="round"
+          />
+        </svg>
+        <svg id="icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+          <path
+            d="M13 10.2A5.2 5.2 0 0 1 5.8 3 5.4 5.4 0 1 0 13 10.2Z"
+            stroke="currentColor"
+            strokeWidth="1.3"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="prompt" aria-hidden="true">
+      <span>uzer@portfolio</span><em>:</em><b>~</b><span>$</span> ./resume
+    </div>
+
+    <main class="sheet">
+      <h1>
+        <span class="cursor">❯</span> Mohammad Uzer Qureshi<span class="cursor">_</span>
+      </h1>
+      <p class="meta">
+        <a href="mailto:uzerqureshi26@gmail.com">uzerqureshi26@gmail.com</a>
+        <br class="hide-md" />
+        &nbsp;·&nbsp; +91-8237416046 &nbsp;·&nbsp;
+        <a href="https://uzerqureshi-portfolio.netlify.app">Portfolio</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/uzairqureshi0803/">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/08Uzair">GitHub</a>
+      </p>
+
+      <h2>Summary</h2>
+      <p>
+        Full-stack developer and BCA student at Amity University (CGPA 8.5/10),
+        building web applications with React.js, Next.js, Node.js, and MongoDB.
+        Interned as a Software Developer at Techchaze Inc., raising a
+        multi-vendor e-commerce platform's Page Speed from 30/100 to 85/100, and
+        at BharatKare, resolving 50+ critical frontend bugs on an official
+        hospital website. Experienced with headless CMS platforms (Strapi,
+        Sanity), AWS services, and AI workflows built with n8n.
+      </p>
+
+      <h2>Experience</h2>
+      <div class="row">
+        <div>
+          <h3>Techchaze Inc.</h3>
+          <span class="role-chip">Software Developer Intern</span>
+        </div>
+        <span class="dates">Oct 2024 – Apr 2025 · Mumbai, India</span>
+      </div>
+      <ul>
+        <li>Worked as a Full-Stack Developer building a Multi-Vendor E-commerce Platform using React.js, Next.js, React Native, and Strapi.</li>
+        <li>Improved the Page Speed score from 30/100 to 85/100, significantly enhancing performance and user experience.</li>
+        <li>Implemented scalable frontend architecture and integrated Strapi (Headless CMS) for flexible backend content management.</li>
+        <li>Delivered optimized, maintainable, and high-quality solutions aligned with modern web standards.</li>
+      </ul>
+
+      <div class="row">
+        <div>
+          <h3>BharatKare</h3>
+          <span class="role-chip">Full Stack Developer Intern</span>
+        </div>
+        <span class="dates">Nov 2024 – Dec 2024 · Gurgaon, India</span>
+      </div>
+      <ul>
+        <li>Developed frontend using React.js while backend was managed via the WordPress CMS for an official hospital website.</li>
+        <li>Resolved 50+ critical frontend bugs, improving stability, performance, and user experience.</li>
+      </ul>
+
+      <h2>Projects</h2>
+      <div class="project-title">AI Integration Generator</div>
+      <p class="project-links">
+        <a href="https://github.com/08Uzair/CUSTOM-MCP"><em>›</em> Code</a>
+        <a href="https://www.npmjs.com/package/ai-integration-generator-cli"><em>›</em> npm</a>
+      </p>
+      <p>
+        Turns any existing API into a fully working AI assistant — zero code
+        required. Scans an application or API and generates a standalone project:
+        an MCP server (endpoints become typed MCP tools), an AI chat backend with
+        streaming (Groq), a drop-in AiChat.jsx chat component, Docker config, and
+        docs — zipped and ready to run. Driven by an 8-step wizard: a Next.js web
+        UI and a terminal CLI (ai-generate). Built with Node.js, Express,
+        MongoDB, and the Model Context Protocol.
+      </p>
+
+      <div class="project-title">AI-Powered Blog Management Platform (Blogii)</div>
+      <p class="project-links">
+        <a href="https://youtu.be/uINd_sg_WIo"><em>›</em> Video</a>
+        <a href="https://github.com/08Uzair/Uzer-2025"><em>›</em> Code</a>
+      </p>
+      <p>
+        AI-powered blog platform with an n8n AI Agent performing full CRUD blog
+        operations (create, update, delete, retrieve) via natural-language
+        prompts. OpenAI API + n8n workflows interpret user intent and trigger the
+        correct backend REST API operation. Next.js, React.js, and Tailwind CSS
+        with JWT-based authentication.
+      </p>
+
+      <div class="project-title">EC2 Instance Automation with Docker Deployment</div>
+      <p class="project-links">
+        <a href="https://youtu.be/jxxod8CJKP8"><em>›</em> Video</a>
+        <a href="https://github.com/08Uzair/aws-ec2-automation"><em>›</em> Code</a>
+      </p>
+      <p>
+        Automated AWS EC2 provisioning and Dockerized app deployment from GitHub
+        via a single API request. EC2 User Data scripts install Docker, build
+        images, and run containers automatically.
+      </p>
+
+      <div class="project-title">Full-Stack Social Media Application</div>
+      <p class="project-links">
+        <a href="https://youtu.be/MWrUsxIS_6w"><em>›</em> Video</a>
+        <a href="https://github.com/08Uzair/Social-Media-Application"><em>›</em> Code</a>
+      </p>
+      <p>
+        Social platform with authentication, posts, stories, likes, bookmarks,
+        and a follow system. Responsive UI in Tailwind CSS and optimized backend
+        APIs. Cloudinary for media storage; deployed with Vercel and Render.
+      </p>
+
+      <div class="project-title">E-Commerce Application (Client)</div>
+      <p class="project-links">
+        <a href="https://youtu.be/yDyqnpCzAOU"><em>›</em> Video</a>
+        <a href="https://github.com/08Uzair/Uzer-2024"><em>›</em> Code</a>
+      </p>
+      <p>
+        Customer-facing e-commerce storefront with product browsing, cart, and
+        order flows.
+      </p>
+
+      <div class="project-title">E-Commerce Admin Panel</div>
+      <p class="project-links">
+        <a href="https://youtu.be/aHzWbpDV-KA"><em>›</em> Video</a>
+        <a href="https://github.com/08Uzair/Uzer-2024"><em>›</em> Code</a>
+      </p>
+      <p>
+        Admin panel for managing products, users, orders, and customer messages.
+        Includes an analytics dashboard and product management system.
+      </p>
+
+      <h2>Skills</h2>
+      <p class="skill"><b>Languages</b> <span class="group-label"></span> JavaScript</p>
+      <p class="skill"><b>Tech stack</b> <span class="group-label"></span> Next.js · React.js · React Redux · Node.js · Express · Tailwind CSS · Shadcn UI</p>
+      <p class="skill"><b>Databases</b> <span class="group-label"></span> MongoDB · Supabase · PostgreSQL</p>
+      <p class="skill"><b>CMS</b> <span class="group-label"></span> Strapi · Sanity</p>
+      <p class="skill"><b>AWS</b> <span class="group-label"></span> IAM · EC2 · Lambda · API Gateway · DynamoDB · CodeBuild · CodePipeline</p>
+      <p class="skill"><b>Tools &amp; automation</b> <span class="group-label"></span> n8n (AI Agent Generator) · GitHub · GitHub Actions · Netlify · Postman · Vercel · Render · Docker</p>
+
+      <h2>Education &amp; Achievements</h2>
+      <ul>
+        <li>Amity University — Bachelor of Computer Applications (BCA), Noida, India · CGPA 8.5/10</li>
+        <li>Secured 4th place (3rd runner-up) in a Hackathon organized by MMCOE College, Pune.</li>
+        <li>Successfully completed Hacktoberfest by contributing to open-source projects.</li>
+      </ul>
+
+      <div class="footer">
+        <span><b>uzer@portfolio</b>:~$ ./build --resume</span>
+        <a class="pill-link" href="/"><em>›</em> back to portfolio</a>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-btn");
+        var sun = document.getElementById("icon-sun");
+        var moon = document.getElementById("icon-moon");
+
+        function sync() {
+          var dark = root.dataset.theme !== "light";
+          sun.style.display = dark ? "block" : "none";
+          moon.style.display = dark ? "none" : "block";
+        }
+        sync();
+
+        btn.addEventListener("click", function () {
+          var next = root.dataset.theme === "light" ? "dark" : "light";
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {
+            /* ignore */
+          }
+          sync();
+        });
+      })();
+    </script>
+  </body>
+</html>

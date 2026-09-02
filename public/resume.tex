@@ -1,0 +1,144 @@
+\documentclass[10pt]{article}
+
+\usepackage{geometry}
+\geometry{top=0.35in, bottom=0.4in, left=0.65in, right=0.65in}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
+
+\usepackage{enumitem}
+\setlist[itemize]{
+  leftmargin=1.15em,
+  labelsep=0.4em,
+  itemsep=2.5pt,
+  parsep=0pt,
+  topsep=3pt,
+  partopsep=0pt
+}
+
+\pagestyle{empty}
+
+\newcommand{\sectiontitle}[1]{%
+  \par\vspace{8pt}%
+  \noindent\textbf{\large #1}\par
+  \vspace{-2pt}\noindent\hrulefill\par
+  \vspace{4pt}%
+}
+
+\newcommand{\role}[3]{%
+  \noindent\textbf{#1} \hfill #3\par
+  \textit{#2}\par
+  \vspace{3pt}%
+}
+
+\begin{document}
+
+% ========== HEADER ==========
+\vspace*{-8pt}
+{\centering
+  {\LARGE\textbf{Mohammad Uzer Qureshi}}\par
+  \vspace{3pt}
+  {\small \href{mailto:uzerqureshi26@gmail.com}{uzerqureshi26@gmail.com} \textbar\
+  +91-8237416046 \textbar\
+  \href{https://uzerqureshi-portfolio.netlify.app}{Portfolio} \textbar\
+  \href{https://www.linkedin.com/in/uzairqureshi0803/}{LinkedIn} \textbar\
+  \href{https://github.com/08Uzair}{GitHub}}\par
+}
+
+% ========== SUMMARY ==========
+\sectiontitle{Summary}
+
+Full-stack developer and BCA student at Amity University (\textbf{CGPA 8.5/10}), building web applications with React.js, Next.js, Node.js, and MongoDB. Interned as a Software Developer at Techchaze Inc., raising a multi-vendor e-commerce platform's Page Speed from \textbf{30/100 to 85/100}, and at BharatKare, resolving \textbf{50+ critical frontend bugs} on an official hospital website. Experienced with headless CMS platforms (Strapi, Sanity), AWS services, and AI workflows built with n8n.
+
+% ========== EXPERIENCE ==========
+\sectiontitle{Experience}
+
+\role{Techchaze Inc.}{Software Developer Intern}{Oct 2024 -- Apr 2025 | Mumbai, India}
+\begin{itemize}
+  \item Worked as a Full-Stack Developer building a Multi-Vendor E-commerce Platform using React.js, Next.js, React Native, and Strapi.
+  \item Improved the Page Speed score from \textbf{30/100 to 85/100}, significantly enhancing performance and user experience.
+  \item Implemented scalable frontend architecture and integrated Strapi (Headless CMS) for flexible backend content management.
+  \item Delivered optimized, maintainable, and high-quality solutions aligned with modern web standards.
+\end{itemize}
+
+\role{BharatKare}{Full Stack Developer Intern}{Nov 2024 -- Dec 2024 | Gurgaon, India}
+\begin{itemize}
+  \item Developed frontend using React.js while backend was managed via the WordPress CMS for an official hospital website.
+  \item Resolved \textbf{50+ critical frontend bugs}, improving stability, performance, and user experience.
+\end{itemize}
+
+% ========== PROJECTS ==========
+\sectiontitle{Projects}
+
+\noindent\textbf{AI-Powered Blog Management Platform (Blogii)} \hfill
+\href{https://uzerqureshi-blog.netlify.app}{Live} | \href{https://youtu.be/uINd_sg_WIo}{Video} | \href{https://github.com/08Uzair/Uzer-2025}{GitHub}\par
+\vspace{2pt}
+\begin{itemize}
+  \item AI-powered blog platform with an n8n AI Agent performing full CRUD blog operations (create, update, delete, retrieve) via natural-language prompts.
+  \item OpenAI API + n8n workflows interpret user intent and automatically trigger the correct backend REST API operation.
+  \item Responsive, modern UI/UX built with Next.js, React.js, and Tailwind CSS, with JWT-based authentication.
+\end{itemize}
+
+\noindent\textbf{EC2 Instance Automation with Docker Deployment} \hfill
+\href{https://uzer-ec2-automation.netlify.app}{Live} | \href{https://youtu.be/jxxod8CJKP8}{Video} | \href{https://github.com/08Uzair/aws-ec2-automation}{GitHub}\par
+\vspace{2pt}
+\begin{itemize}
+  \item Automated AWS EC2 provisioning and Dockerized app deployment from GitHub via a single API request.
+  \item Used EC2 User Data scripts to install Docker, build images, and run containers automatically.
+\end{itemize}
+
+\noindent\textbf{Full-Stack Social Media Application} \hfill
+\href{https://social-media-application-umber.vercel.app}{Live} | \href{https://youtu.be/MWrUsxIS_6w}{Video} | \href{https://github.com/08Uzair/Social-Media-Application}{GitHub}\par
+\vspace{2pt}
+\begin{itemize}
+  \item Social platform with authentication, posts, stories, likes, bookmarks, and a follow system.
+  \item Responsive UI with Tailwind CSS and optimized backend APIs.
+  \item Cloudinary for media storage; deployed with Vercel and Render.
+\end{itemize}
+
+\noindent\textbf{E-Commerce Application (Client)} \hfill
+\href{https://uzerqureshi-eccom.netlify.app}{Live} | \href{https://youtu.be/yDyqnpCzAOU}{Video} | \href{https://github.com/08Uzair/Uzer-2024}{GitHub}\par
+\vspace{2pt}
+\begin{itemize}
+  \item Customer-facing e-commerce storefront with product browsing, cart, and order flows.
+\end{itemize}
+
+\noindent\textbf{E-Commerce Admin Panel} \hfill
+\href{https://uzerqureshi-eccom-admin.netlify.app}{Live} | \href{https://youtu.be/aHzWbpDV-KA}{Video} | \href{https://github.com/08Uzair/Uzer-2024}{GitHub}\par
+\vspace{2pt}
+\begin{itemize}
+  \item Admin panel for managing products, users, orders, and customer messages.
+  \item Analytics dashboard and product management system.
+\end{itemize}
+
+\noindent\textbf{AI Integration Generator} \hfill
+\href{https://github.com/08Uzair/CUSTOM-MCP}{GitHub} | \href{https://www.npmjs.com/package/ai-integration-generator-cli}{npm}\par
+\vspace{2pt}
+\begin{itemize}
+  \item Turns any existing API into a fully working AI assistant --- zero code required. Scans an application or API and generates a standalone project.
+  \item Generated output: MCP server (endpoints become typed MCP tools), AI chat backend with streaming (Groq), drop-in AiChat.jsx chat component, Docker config, and docs --- zipped and ready to run.
+  \item Driven by an 8-step wizard: Next.js web UI and a terminal CLI (ai-generate). Node.js, Express, MongoDB, and the Model Context Protocol.
+\end{itemize}
+
+% ========== SKILLS ==========
+\sectiontitle{Skills}
+
+{\setlength{\parskip}{2.5pt}
+\noindent\textbf{Languages:} JavaScript\par
+\noindent\textbf{Tech Stack:} Next.js, React.js, React Redux, Node.js, Express, Tailwind CSS, Shadcn UI\par
+\noindent\textbf{Databases:} MongoDB, Supabase, PostgreSQL\par
+\noindent\textbf{CMS:} Strapi, Sanity\par
+\noindent\textbf{AWS:} IAM, EC2, Lambda, API Gateway, DynamoDB, CodeBuild, CodePipeline\par
+\noindent\textbf{Tools \& Automation:} n8n (AI Agent Generator), GitHub, GitHub Actions, Netlify, Postman, Vercel, Render, Docker\par
+}
+
+% ========== EDUCATION ==========
+\sectiontitle{Education \& Achievements}
+
+\begin{itemize}
+  \item \textbf{Amity University} --- Bachelor of Computer Applications (BCA), Noida, India | CGPA: \textbf{8.5/10}
+  \item Secured \textbf{4th place (3rd runner-up)} in a Hackathon organized by MMCOE College, Pune.
+  \item Successfully completed \textbf{Hacktoberfest} by contributing to open-source projects.
+\end{itemize}
+
+\end{document}

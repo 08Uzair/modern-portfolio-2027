@@ -28,6 +28,12 @@ export const defaultChips: IntentId[] = ["who", "work", "experience"];
 export const timelineAsk: Partial<Record<IntentId, string>> = {
   techchaze: "What did you build at Techchaze?",
   bharatkare: "What did you build at BharatKare?",
+  aig: "What is the AI Integration Generator?",
+  blogii: "What is Blogii?",
+  ec2: "How does the EC2 automation work?",
+  social: "What is the social media app about?",
+  ecommerce: "Tell me about the e-commerce store",
+  ecommerceAdmin: "Tell me about the e-commerce admin panel",
 };
 
 export const intents: Intent[] = [
@@ -110,35 +116,35 @@ export const intents: Intent[] = [
     id: "blogii",
     aliases: ["blogii", "blog", "ai blog", "ai-powered blog", "blog management", "n8n", "openai", "ai blog platform"],
     prompt: "Blogii — AI blog",
-    timeline: null,
+    timeline: "blogii",
     followUps: ["ec2", "social", "work"],
   },
   {
     id: "ec2",
     aliases: ["ec2", "ec2 automation", "aws ec2", "aws automation", "docker deployment", "user data", "infrastructure"],
     prompt: "EC2 automation",
-    timeline: null,
+    timeline: "ec2",
     followUps: ["blogii", "social", "work"],
   },
   {
     id: "social",
     aliases: ["social", "social media", "social media app", "posts", "stories", "cloudinary", "social application"],
     prompt: "Social media app",
-    timeline: null,
+    timeline: "social",
     followUps: ["ecommerce", "blogii", "work"],
   },
   {
     id: "ecommerce",
     aliases: ["ecommerce", "e commerce", "e-commerce", "storefront", "online store", "shopping", "client app"],
     prompt: "E-commerce store",
-    timeline: null,
+    timeline: "ecommerce",
     followUps: ["ecommerceAdmin", "social", "work"],
   },
   {
     id: "ecommerceAdmin",
     aliases: ["admin panel", "admin", "ecommerce admin", "e-commerce admin", "analytics dashboard", "dashboard"],
     prompt: "E-commerce admin",
-    timeline: null,
+    timeline: "ecommerceAdmin",
     followUps: ["ecommerce", "aig", "work"],
   },
   {
@@ -158,7 +164,7 @@ export const intents: Intent[] = [
       "groq",
     ],
     prompt: "AI Integration Generator",
-    timeline: null,
+    timeline: "aig",
     followUps: ["blogii", "ec2", "contact"],
   },
   {

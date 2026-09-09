@@ -44,14 +44,8 @@ export function Timeline({
       <div
         role="tablist"
         aria-label="Show internships or projects"
-        className="relative grid grid-cols-2 rounded-full bg-chip p-1"
+        className="grid grid-cols-2 rounded-full bg-chip p-1 w-[90%]"
       >
-        <span
-          aria-hidden="true"
-          className={`absolute inset-y-1 left-1 w-[calc(50%-0.25rem)] rounded-full bg-send transition-transform duration-300 ease-out ${
-            tab === "project" ? "translate-x-full" : "translate-x-0"
-          }`}
-        />
         {tabs.map((item) => {
           const isOpen = tab === item.id;
           return (
@@ -64,8 +58,10 @@ export function Timeline({
                 setTab(item.id);
                 setHovered(null);
               }}
-              className={`relative z-10 min-h-8 rounded-full py-1.5 text-center text-[13px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
-                isOpen ? "text-send-fg" : "text-ink-muted hover:text-ink"
+              className={`min-h-8 rounded-full py-1.5 text-center text-[13px] tracking-[-0.01em] transition-[color,font-weight] duration-200 ${
+                isOpen
+                  ? "font-bold text-ink"
+                  : "font-medium text-ink-muted hover:text-ink"
               }`}
             >
               {item.label}

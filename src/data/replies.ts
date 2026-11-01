@@ -123,7 +123,7 @@ Scan an application or API, and it generates a standalone project containing:
 • Docker config and docs — all zipped, ready to download. Zero code required.
 
 Everything runs through one 8-step wizard — a web UI (Next.js) or a terminal CLI (ai-generate). Generated projects are fully standalone. Node.js, Express, MongoDB, and the Model Context Protocol under the hood.
-
+Live Link : https://uzerqureshi-mcpgenerator.vercel.app/
 Code: https://github.com/08Uzair/Ai-Integration-Generator.git
 npm: ai-integration-generator-cli`,
 

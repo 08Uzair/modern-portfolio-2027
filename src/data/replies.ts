@@ -124,7 +124,7 @@ Scan an application or API, and it generates a standalone project containing:
 
 Everything runs through one 8-step wizard — a web UI (Next.js) or a terminal CLI (ai-generate). Generated projects are fully standalone. Node.js, Express, MongoDB, and the Model Context Protocol under the hood.
 
-Code: https://github.com/08Uzair/CUSTOM-MCP
+Code: https://github.com/08Uzair/Ai-Integration-Generator.git
 npm: ai-integration-generator-cli`,
 
   contact: `Email — uzerqureshi26@gmail.com
